@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio de Jefferson</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header">
+  <nav class="main-nav">
+    <ul id="nav-links">
+      <li><a href="#sobre" data-translate="home.nav.about">Sobre Mim</a></li>
+      <li><a href="#projetos" data-translate="home.nav.projects">Projetos</a></li>
+      <li><a href="#habilidades" data-translate="home.nav.skills">Habilidades</a></li>
+      <li><a href="#videos" data-translate="home.nav.videos">Vídeos</a></li>
+      <li><a href="#skills" data-translate="home.nav.stacks">Stacks</a></li>
+      <li><a href="#contato" data-translate="home.nav.contact">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- Bloco com hambúrguer + idiomas -->
+  <div class="header-right">
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <div class="language-toggle">
+      <button id="flag-br">BR</button>
+      <button id="flag-en">EN</button>
+    </div>
+  </div>
+</header>
+
+  <!-- conteudo principal que será visivel para o usuario -->
+  <main>
+    <section id="sobre" class="sobre-flex">
+      <div class="sobre-imagem">
+        <img src="imagens/jefferson.jpg" alt="Foto de Jefferson" />
+      </div>
+      <div class="sobre-texto">
+        <h2 data-translate="home.aboutMeTitle">Olá, sou Jefferson</h2>
+        <p data-translate="home.aboutMeText1">Sou um estudante de Análise e Desenvolvimento de Sistemas com foco em transformar ideias em experiências digitais impactantes...</p>
+        <p data-translate="home.aboutMeText2">Minha abordagem une criatividade e lógica para desenvolver soluções funcionais, acessíveis e visualmente atraentes...</p>
+        <p data-translate="home.aboutMeText3">Vamos colaborar para criar algo excepcional.</p>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <h2 data-translate="home.projectsTitle">Projetos</h2>
+      <ul>
+        <li data-translate="home.project1"><strong>Blog de Tecnologia:</strong> Site informativo com layout responsivo usando HTML e CSS.</li>
+        <li data-translate="home.project2"><strong>Formulário de Cadastro:</strong> Página com validação de dados em JavaScript.</li>
+        <li data-translate="home.project3"><strong>Sistema de Estoque:</strong> Simulação de CRUD com banco de dados MySQL.</li>
+      </ul>
+    </section>
+
+    <section id="habilidades">
+      <!-- título traduzido -->
+      <h2 data-translate="home.skillsTitle">Habilidades Técnicas</h2>
+
+      <!-- lista traduzida automaticamente -->
+      <ul data-translate="home.skillsList"></ul>
+    </section>
+
+
+    <section id="skills" class="skills-section">
+      <h2 data-translate="home.stacksTitle">DOMÍNIO NAS SEGUINTES FERRAMENTAS E STACKS</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <img src="icons/html.png" alt="HTML" class="icone-stack" title="HTML" />
+          <p>HTML</p>
+        </div>
+        <div class="skill">
+          <img src="icons/css3.png" alt="CSS3" class="icone-stack" title="CSS3" />
+          <p>CSS3</p>
+        </div>
+        <div class="skill">
+          <img src="icons/javascript.png" alt="JavaScript" class="icone-stack" title="JavaScript" />
+          <p>JavaScript</p>
+        </div>
+        <div class="skill">
+          <img src="icons/python.png" alt="Python" class="icone-stack" title="Python" />
+          <p>Python</p>
+        </div>
+        <div class="skill">
+          <img src="icons/mysql.png" alt="MySQL" class="icone-stack" title="MySQL" />
+          <p>MySQL</p>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <a href="#contato" class="btn" data-translate="home.contactButton">CONTACT</a>
+        <a href="https://linkedin.com/in/seuusuario" class="btn">LinkedIn →</a>
+      </div>
+    </section>
+    
+<section id="videos">
+  <h2 data-translate="home.nav.videos">Vídeos</h2>
+
+  <div class="carousel-wrapper">
+    <button id="scroll-left" class="scroll-button">⟨</button>
+
+    <div id="video-carousel" class="videos-linha">
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/9hV5oXi80-A" allowfullscreen title="Recuperar Pendrive Corrompido"></iframe>
+      </div>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/TQS0lsZwMVg" allowfullscreen title="Curso de HTML e CSS"></iframe>
+      </div>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/Z7mnxUI4u00" allowfullscreen title="JavaScript para Iniciantes"></iframe>
+      </div>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/LWU2OR19ZG4" allowfullscreen title="Python Básico"></iframe>
+      </div>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/oi3UHWXLxLs" allowfullscreen title="Curso de Banco de Dados"></iframe>
+      </div>
+    </div>
+
+    <button id="scroll-right" class="scroll-button">⟩</button>
+  </div>
+
+  <p data-translate="home.aiVideoText">Vídeos explicando cada uma das stacks: HTML, CSS3, JavaScript, Python e MySQL.</p>
+</section>
+<!-- Recursos para Download -->
+<section id="recursos">
+  <h2 data-translate="home.resourcesTitle">Recursos para baixar</h2>
+ <ul>
+  <li>
+    <a href="arquivos/guia-completo.pdf" 
+       onclick="confirmarDownload(event, 'arquivos/guia-completo.pdf')" 
+       data-translate="home.download1">
+       📘 Guia Completo de Engenharia de Software
+    </a>
+    <span>
+      <span data-translate="home.fileSizeLabel">Tamanho:</span>
+      <span id="size-guia"></span>
+    </span>
+  </li>
+  <li>
+    <a href="arquivos/ciberseguranca.pdf" 
+       onclick="confirmarDownload(event, 'arquivos/ciberseguranca.pdf')" 
+       data-translate="home.download2">
+       🔒 Cibersegurança para Iniciantes
+    </a>
+    <span>
+      <span data-translate="home.fileSizeLabel">Tamanho:</span>
+      <span id="size-ciber"></span>
+    </span>
+  </li>
+  <li>
+    <a href="arquivos/relatorio-tendencias.pdf" 
+       onclick="confirmarDownload(event, 'arquivos/relatorio-tendencias.pdf')" 
+       data-translate="home.download3">
+       📊 Relatório de Tendências Tecnológicas 2024
+    </a>
+    <span>
+      <span data-translate="home.fileSizeLabel">Tamanho:</span>
+      <span id="size-tendencias"></span>
+    </span>
+  </li>
+</ul>
+
+  <p data-translate="home.resourcesNote">
+    Para abrir os arquivos PDF, você precisará de um leitor de PDF como o Adobe Acrobat Reader.
+  </p>
+</section>
+
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="rodape" id="contato">
+    <h2 data-translate="home.contactTitle">Vamos fazer a mágica acontecer!</h2>
+    <p data-translate="home.contactText">Do conceito à entrega final, busco excelência em cada projeto...</p>
+    <!-- Botão atualizado -->
+    <a href="formulario.html" class="botao-contato" data-translate="home.contactButton">contato →</a>
+    <div class="icones-sociais">
+      <a href="https://linkedin.com/in/seuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/seuusuario" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/seuusuario" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:jefferson.theodoro_@hotmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <script type="module" src="menu.js"></script>
+  <script type="module" src="carousel.js"></script>
+  <script type="module" src="index.js"></script>
+  <script type="text/javascript" src="downloadManager.js"></script>
+
+
+
+
+</body>
+</html>

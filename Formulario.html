@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Contato</title>
+  <link rel="stylesheet" href="style.formulario.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="site-header compact">
+    <!-- Navegação pode ser adicionada aqui -->
+  </header>
+
+  <!-- Formulário de contato -->
+  <main>
+    <section class="contato">
+      <h2>Entre em Contato</h2>
+      <form id="formulario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+        
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required inputmode="numeric">
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem..." required></textarea>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn">Enviar</button>
+          <button type="reset" class="btn">Limpar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="rodape" id="contato">
+    <h2>Vamos fazer a mágica acontecer!</h2>
+    <p>Obrigado por visitar nosso site</p>
+    <button type="button" class="btn" onclick="window.location.href='index.html'">
+      Retornar para o início
+    </button>
+
+    <div class="icones-sociais">
+      <a href="https://linkedin.com/in/seuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/seuusuario" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/seuusuario" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:jefferson.theodoro_@hotmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <!-- Importa o JavaScript separado -->
+  <script src="email.min.js" defer></script>
+
+</body>
+</html>

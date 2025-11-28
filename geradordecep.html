@@ -4,13 +4,77 @@
   <meta charset="UTF-8">
   <title>Consulta CEP com ViaCEP</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      text-align: left;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    #resultado strong {
+      color: #007BFF;
+    }
+  </style>
 </head>
 <body>
-  <label for="cep">Digite o CEP:</label>
-  <input type="text" id="cep" placeholder="00000-000">
-  <button id="buscar">Buscar</button>
+  <div class="container">
+    <label for="cep">Digite o CEP:</label>
+    <input type="text" id="cep" placeholder="00000-000">
+    <button id="buscar">Buscar</button>
 
-  <div id="resultado"></div>
+    <div id="resultado"></div>
+  </div>
 
   <script>
     $(document).ready(function(){
@@ -25,17 +89,17 @@
             success: function(data){
               if(!("erro" in data)){
                 $("#resultado").html(
-                  "Logradouro: " + data.logradouro + "<br>" +
-                  "Bairro: " + data.bairro + "<br>" +
-                  "Cidade: " + data.localidade + "<br>" +
-                  "Estado: " + data.uf
+                  "<strong>Logradouro:</strong> " + data.logradouro + "<br>" +
+                  "<strong>Bairro:</strong> " + data.bairro + "<br>" +
+                  "<strong>Cidade:</strong> " + data.localidade + "<br>" +
+                  "<strong>Estado:</strong> " + data.uf
                 );
               } else {
-                $("#resultado").html("CEP não encontrado.");
+                $("#resultado").html("<span style='color:red;'>CEP não encontrado.</span>");
               }
             },
             error: function(){
-              $("#resultado").html("Erro na consulta.");
+              $("#resultado").html("<span style='color:red;'>Erro na consulta.</span>");
             }
           });
         }

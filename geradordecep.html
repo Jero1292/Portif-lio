@@ -1,12 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gerador de cep</title>
+  <meta charset="UTF-8">
+  <title>Consulta CEP com ViaCEP</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h1>Gerador de CEP</h1>
-    
+  <label for="cep">Digite o CEP:</label>
+  <input type="text" id="cep" placeholder="00000-000">
+  <button id="buscar">Buscar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    $(document).ready(function(){
+      $("#buscar").click(function(){
+        var cep = $("#cep").val().replace(/\D/g, ''); // remove caracteres não numéricos
+
+        if(cep !== ""){
+          $.ajax({
+            url: "https://viacep.com.br/ws/" + cep + "/json/",
+            type: "GET",
+            dataType: "json",
+            success: function(data){
+              if(!("erro" in data)){
+                $("#resultado").html(
+                  "Logradouro: " + data.logradouro + "<br>" +
+                  "Bairro: " + data.bairro + "<br>" +
+                  "Cidade: " + data.localidade + "<br>" +
+                  "Estado: " + data.uf
+                );
+              } else {
+                $("#resultado").html("CEP não encontrado.");
+              }
+            },
+            error: function(){
+              $("#resultado").html("Erro na consulta.");
+            }
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
